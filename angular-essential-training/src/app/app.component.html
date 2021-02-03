@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>My New App chnages</h1>
-    <p>
-      This is sample data for the app and its writtern inside inline template
-    </p>
-    <mw-media-item
-      (delete)="onMediaItemDelete($event)"
-      [mediaItem]="firstMediaItem"
-    >
-    </mw-media-item>
-  </body>
-</html>
+<section>
+  <header>
+    <h1>Media Watch List</h1>
+    <p class="description">Keeping track of the media I want to watch.</p>
+  </header>
+  <mw-media-item-list></mw-media-item-list>
+</section>
