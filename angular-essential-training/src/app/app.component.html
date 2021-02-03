@@ -10,6 +10,10 @@
     <p>
       This is sample data for the app and its writtern inside inline template
     </p>
-    <mw-media-item> </mw-media-item>
+    <mw-media-item
+      (delete)="onMediaItemDelete($event)"
+      [mediaItem]="firstMediaItem"
+    >
+    </mw-media-item>
   </body>
 </html>
