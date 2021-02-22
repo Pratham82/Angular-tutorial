@@ -1,3 +1,16 @@
-<label for="name">Enter your name here: &nbsp; </label>
-<input type="text" [(ngModel)]="name" />
-<p><b>Name:</b> {{ name }}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="heading">
+        <h1>This is the app component</h1>
+        <label for="name">Enter your name here: &nbsp; </label>
+        <input type="text" [(ngModel)]="name" />
+        <p><b>Name:</b> {{ name }}</p>
+      </div>
+      <!-- <app-server> </app-server> -->
+      <div class="app-server"></div>
+      <app-client> </app-client>
+      <app-users> </app-users>
+    </div>
+  </div>
+</div>
