@@ -1,5 +1,53 @@
 <div class="user-style">
   <h5>User Component</h5>
+  <label> Enter Server Name below: </label>
+  <p>One way Binding using Event Binding</p>
+  <input
+    type="text"
+    class="form-control mb-4"
+    (input)="onUpdateServer($event)"
+  />
+  <p>Two way Binding using Property + Event binding(ngModel)</p>
+  <input type="text" class="form-control mb-4" [(ngModel)]="serverName" />
+
+  <p>Server Name: {{ serverName }}</p>
+
+  <button
+    class="btn btn-primary mb-3"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+  >
+    Add Server
+  </button>
+  <p>
+    {{
+      allowNewServer
+        ? "Creatinig Server is Allowed"
+        : "Creating Server is not allowed"
+    }}
+  </p>
+  <p>{{ serverCreatioinStatus }}</p>
+  <div class="p-5 text-center">
+    <button class="btn btn-primary mb-2" (click)="userAuth()">
+      {{ userStatus ? "Log Out " : "Log In" }}
+    </button>
+    <br />
+    <br />
+    {{ userStatus ? "User Online 🟢 " : "User Offline 🔴" }}
+  </div>
+  <div style="border: 1px solid yellow; padding: 10px">
+    <h4>Assignment:</h4>
+    <p>Enter Usernanme:</p>
+    <input type="text" class="form-control mb-4" [(ngModel)]="userName" />
+    <p>Username: {{ userName }}</p>
+    <button
+      class="btn btn-primary"
+      [disabled]="!userName"
+      (click)="onResetName()"
+    >
+      Reset User
+    </button>
+  </div>
   <app-server> </app-server>
   <br />
   <app-server> </app-server>

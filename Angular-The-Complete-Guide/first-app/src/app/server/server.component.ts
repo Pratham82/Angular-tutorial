@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css'],
 })
-export class ServerComponent {}
+export class ServerComponent {
+  public server_ID: number = 22354;
+  public server_status: boolean = true;
+
+  getServerSatus() {
+    return this.server_status;
+  }
+}
