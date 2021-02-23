@@ -10,7 +10,7 @@ export class UsersComponent implements OnInit {
   allowNewServer = false;
   serverCreatioinStatus = 'No server was created';
   userStatus = false;
-  serverName = 'OldName';
+  serverName = '';
   userName = 'Prathamesh';
   constructor() {
     setTimeout(() => (this.allowNewServer = true), 2000);
