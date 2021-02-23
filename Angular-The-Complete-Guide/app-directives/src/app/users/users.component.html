@@ -1,0 +1,36 @@
+<div class="user-style">
+  <h5>User Component</h5>
+  <label> Enter Server Name below: </label>
+  <input type="text" class="form-control mb-4" [(ngModel)]="serverName" />
+
+  <p>Server Name: {{ serverName }}</p>
+
+  <p *ngIf="serverCreated">New server is created with name: {{ serverName }}</p>
+
+  <button
+    class="btn btn-primary mb-3"
+    [disabled]="!serverName"
+    (click)="onCreateServer()"
+  >
+    Add Server
+  </button>
+  <p>
+    {{
+      allowNewServer
+        ? 'Creatinig Server is Allowed'
+        : 'Creating Server is not allowed'
+    }}
+  </p>
+  <!--
+  <p>{{ serverCreatioinStatus }}</p>
+  -->
+  <div class="p-5 text-center">
+    <button class="btn btn-primary mb-2" (click)="userAuth()">
+      {{ userStatus ? 'Log Out ' : 'Log In' }}
+    </button>
+    <br />
+    <br />
+    {{ userStatus ? 'User Online 🟢 ' : 'User Offline 🔴' }}
+  </div>
+  <br />
+</div>
