@@ -5,7 +5,12 @@
 
   <p>Server Name: {{ serverName }}</p>
 
-  <p *ngIf="serverCreated">New server is created with name: {{ serverName }}</p>
+  <p *ngIf="serverCreated; else noServer">
+    New server is created with name: {{ serverName }}
+  </p>
+  <ng-template #noServer>
+    <p>No server was created!</p>
+  </ng-template>
 
   <button
     class="btn btn-primary mb-3"
@@ -24,6 +29,7 @@
   <!--
   <p>{{ serverCreatioinStatus }}</p>
   -->
+  <p>This is text</p>
   <div class="p-5 text-center">
     <button class="btn btn-primary mb-2" (click)="userAuth()">
       {{ userStatus ? 'Log Out ' : 'Log In' }}
