@@ -1,5 +1,7 @@
 <div class="heading2">
   <h2>Server Component</h2>
   <p>Server ID: {{ server_ID }}</p>
-  <p ngStyle="">Server Status: {{ getServerSatus() }}</p>
+  <p [ngStyle]="{ backgroundColor: getColor() }">
+    Server Status: {{ getServerSatus() }}
+  </p>
 </div>

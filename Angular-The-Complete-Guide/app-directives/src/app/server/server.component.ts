@@ -4,7 +4,15 @@ import { Component } from '@angular/core'
   selector: 'app-server',
   //selector: '[app-server]',
   templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css'],
+  //styleUrls: ['./server.component.css'],
+  styles: [
+    `
+      .heading2 {
+        border: 2px solid #0db9db;
+        padding: 20px;
+      }
+    `,
+  ],
 })
 export class ServerComponent {
   public server_ID: number = 22354
