@@ -11,6 +11,10 @@ import { Component } from '@angular/core'
         border: 2px solid #0db9db;
         padding: 20px;
       }
+
+      .online {
+        color: white;
+      }
     `,
   ],
 })
@@ -21,7 +25,7 @@ export class ServerComponent {
   constructor() {
     this.server_status = Math.random() > 0.5 ? 'online' : 'offfline'
   }
-  getServerSatus() {
+  getServerStatus() {
     return this.server_status
   }
   getColor() {

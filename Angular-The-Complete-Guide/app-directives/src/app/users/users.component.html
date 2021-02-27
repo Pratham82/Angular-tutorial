@@ -29,7 +29,7 @@
   <!--
   <p>{{ serverCreatioinStatus }}</p>
   -->
-  <p>This is text</p>
+  <app-server *ngFor="let server of servers"> </app-server>
   <div class="p-5 text-center">
     <button class="btn btn-primary mb-2" (click)="userAuth()">
       {{ userStatus ? 'Log Out ' : 'Log In' }}

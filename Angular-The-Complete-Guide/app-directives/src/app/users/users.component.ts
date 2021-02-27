@@ -13,12 +13,14 @@ export class UsersComponent implements OnInit {
   serverName = ''
   userName = 'Prathamesh'
   serverCreated = false
+  servers = ['TestServer', 'TestServer2']
   constructor() {
     setTimeout(() => (this.allowNewServer = true), 2000)
   }
 
   onCreateServer() {
     this.serverCreated = true
+    this.servers.push(this.serverName)
     this.serverCreatioinStatus = `New Server is created!! with name ${this.serverName}`
   }
   userAuth() {
@@ -32,5 +34,5 @@ export class UsersComponent implements OnInit {
     this.userName = ''
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
