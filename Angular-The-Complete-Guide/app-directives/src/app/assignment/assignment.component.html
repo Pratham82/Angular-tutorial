@@ -1,0 +1,14 @@
+<p>assignment works!</p>
+<button class="btn-success btn mb-3" (click)="onToggleDisplay()">
+  {{ !displayProp ? 'Show Password' : 'Hide Password' }}
+</button>
+
+<p *ngIf="displayProp === true">Secret Password: {{ password }}</p>
+<p
+  *ngFor="let log of logs; let i = index"
+  [ngStyle]="{ backgroundColor: i > 4 ? 'red' : 'transparent' }"
+  [ngClass]="{ whiteText: i > 4 }"
+>
+  <!-- Log called {{ log }} times -->
+  {{ log }} {{ i }}
+</p>
