@@ -11,7 +11,7 @@ export class RecipeListComponent implements OnInit {
     new Recipe(
       'Test Recipe',
       'Recipe description',
-      'https://unsplash.com/photos/iNwCO9ycBlc'
+      'https://i.postimg.cc/pTdgCS65/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     ),
   ];
   constructor() {}
