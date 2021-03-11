@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-workshop-frontend-masters": {
+    "angular9-fundamentals-workshop": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-workshop-frontend-masters",
+            "outputPath": "dist/angular9-fundamentals-workshop",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -44,6 +44,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -66,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-workshop-frontend-masters:build"
+            "browserTarget": "angular9-fundamentals-workshop:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-workshop-frontend-masters:build:production"
+              "browserTarget": "angular9-fundamentals-workshop:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-workshop-frontend-masters:build"
+            "browserTarget": "angular9-fundamentals-workshop:build"
           }
         },
         "test": {
@@ -115,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-workshop-frontend-masters:serve"
+            "devServerTarget": "angular9-fundamentals-workshop:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-workshop-frontend-masters:serve:production"
+              "devServerTarget": "angular9-fundamentals-workshop:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-workshop-frontend-masters"
+  "defaultProject": "angular9-fundamentals-workshop"
 }
