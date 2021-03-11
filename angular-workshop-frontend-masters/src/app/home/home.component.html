@@ -1,38 +1,29 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title> Course Outline </mat-card-title>
+    <mat-card-title>
+      {{ title }}
+    </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <!-- LESSON LIST -->
-    <!-- <h2 [style.color]="themeColor">This is colored Text</h2>
-    <hr />
-    <h3>themeColor: {{ themeColor }}</h3>
-    <mat-label>Theme Color</mat-label>
-    <input matInput [(ngModel)]="themeColor" />
-    <br />
-    <br />
-    <button mat-raised-button color="primary" (click)="updateColor()">
-      Update
-    </button> -->
     <mat-list>
       <mat-list-item
-        *ngFor="let course of courseLessons"
-        (click)="selectLesson(course)"
+        *ngFor="let lesson of courseLessons"
+        (click)="selectLesson(lesson)"
       >
-        <h3>{{ course.title }}</h3>
+        <h3>{{ lesson.title }}</h3>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
 </mat-card>
+
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Debug</mat-card-title>
-    <mat-card-subtitle>subtitle</mat-card-subtitle>
+    <mat-card-title>DEBUG</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <span *ngIf="currentLesson; else elsePart">
-      {{ currentLesson | json }}
-    </span>
-    <ng-template #elsePart>Select a Lesson</ng-template>
+    <span *ngIf="currentLesson; else elseBlock">{{
+      currentLesson | json
+    }}</span>
+    <ng-template #elseBlock>Select a lesson</ng-template>
   </mat-card-content>
 </mat-card>
