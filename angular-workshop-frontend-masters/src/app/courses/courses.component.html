@@ -31,13 +31,13 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <span *ngIf="selectedCourse.id; else noSelection"
-            >{{ selectedCourse.title }}
-          </span>
-          <ng-template #noSelection> Select Course </ng-template>
+          <span *ngIf="selectedCourse.id; else noSelection">{{
+            selectedCourse.title
+          }}</span>
+          <ng-template #noSelection>Select Course</ng-template>
         </mat-card-title>
       </mat-card-header>
-      <form #form="ngForm" (ngSubmit)="saveCourse(selectedCourse)">
+      <form #form="ngForm" (submit)="saveCourse(selectedCourse)">
         <mat-card-content>
           <mat-form-field>
             <input
@@ -59,57 +59,36 @@
             />
           </mat-form-field>
           <section>
-            <mat-label>
-              {{ selectedCourse.percentComplete }}% Completed</mat-label
-            >
+            <h4>{{ selectedCourse.percentComplete }}% Complete</h4>
             <mat-slider
-              thumbLabel
               class="full-width"
               min="0"
               max="100"
-              name="percentCompleted"
+              name="percentComplete"
+              thumbLabel
               [(ngModel)]="selectedCourse.percentComplete"
-              tickInterval="1"
-            ></mat-slider>
-          </section>
-          <section>
-            Favorite &nbsp;
-            <mat-checkbox name="favorite" [(ngModel)]="selectedCourse.favorite">
-            </mat-checkbox>
-          </section>
-          <mat-card-actions>
-            <button
-              type="submit"
-              color="primary"
-              mat-raised-button
-              (click)="cancel()"
-              [disabled]="form.invalid"
             >
-              Submit
-            </button>
-            <button type="button" mat-raised-button (click)="cancel()">
-              Cancel
-            </button>
-          </mat-card-actions>
+            </mat-slider>
+          </section>
+          <section></section>
+          <mat-checkbox
+            name="favorite"
+            [(ngModel)]="selectedCourse.favorite"
+          ></mat-checkbox>
         </mat-card-content>
+        <mat-card-actions>
+          <button
+            [disabled]="form.invalid"
+            type="submit"
+            mat-button
+            color="primary"
+          >
+            Submit
+          </button>
+          <button type="button" mat-button (click)="cancel()">Cancel</button>
+        </mat-card-actions>
       </form>
-      <pre> {{ form.value | json }} </pre>
-      <pre> {{ form.valid | json }} </pre>
     </mat-card>
   </div>
 </div>
-<div style="display: flex; justify-content: center">
-  <mat-card style="width: 15vw; text-align: center">
-    <h1>Counter</h1>
-    <h3>Number: {{ numberVal }}</h3>
-    <button
-      mat-raised-button
-      style="background-color: #2bcc23; color: white"
-      (click)="increment()"
-    >
-      +
-    </button>
-    &nbsp;
-    <button mat-raised-button color="warn" (click)="decrement()">-</button>
-  </mat-card>
-</div>
+<app-counter></app-counter>

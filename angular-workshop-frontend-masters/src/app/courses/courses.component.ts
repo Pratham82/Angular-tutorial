@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../shared/services/courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -7,40 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
   // CHALLENGE
-  // STEP 01: Display courses using ngFor
-  // STEP 02: Add event handler to select course
-  // STEP 03: Display raw json of selected course
-  selectedCourse = null
-  numberVal = 0
+  // STEP 01: Update the form to show percentComplete
+  // STEP 02: Updaet the form to show favorite
 
+  selectedCourse = null;
 
-  courses = [
-    {
-      id: 1,
-      title: 'Angular 9 Fundamentals',
-      description: 'Learn the fundamentals of Angular 9',
-      percentComplete: 26,
-      favorite: true
-    },
-    {
-      id: 2,
-      title: 'JavaScript The Really REALLY HARD PARTS',
-      description: 'Worship Will Sentance',
-      percentComplete: 50,
-      favorite: true
-    }
-  ];
+  courses = null
 
-  constructor() { }
+  // Here we are injecting the coursesService
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
-    this.resetSelectedCourse()
-  }
-
-  selectCourse(course) {
-    console.log(course);
-    this.selectedCourse = course
-
+    this.resetSelectedCourse();
+    this.courses = this.coursesService.all()
   }
 
   resetSelectedCourse() {
@@ -50,30 +30,29 @@ export class CoursesComponent implements OnInit {
       description: '',
       percentComplete: 0,
       favorite: false
-    }
-    this.selectedCourse = emptyCourse
+    };
+
+    // this.selectedCourse = this.coursesService.all();
+    this.selectedCourse = emptyCourse;
   }
 
-  deleteCourse(id) {
-    console.log(id)
+  selectCourse(course) {
+    this.selectedCourse = course;
+  }
+
+  saveCourse(course) {
+    if (course.id) {
+      this.coursesService.update(course)
+    } else {
+      this.coursesService.create(course)
+    }
+  }
+
+  deleteCourse(courseId) {
+    this.coursesService.delete(courseId)
   }
 
   cancel() {
-    this.resetSelectedCourse()
+    this.resetSelectedCourse();
   }
-
-  increment() {
-    this.numberVal = this.numberVal + 1
-  }
-  decrement() {
-    this.numberVal = this.numberVal > 0 ? this.numberVal - 1 : this.numberVal = 0
-  }
-
-  saveCourse(currentCourse) {
-    console.log(currentCourse)
-    console.log('Save course called');
-
-  }
-
-
 }
