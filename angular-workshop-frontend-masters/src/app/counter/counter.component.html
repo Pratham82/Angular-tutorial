@@ -1,0 +1,15 @@
+<div style="width: fit-content">
+  <mat-card>
+    <h1>Counter</h1>
+    <h3>Number: {{ numberVal }}</h3>
+    <button
+      mat-raised-button
+      style="background-color: #2bcc23; color: white"
+      (click)="increment()"
+    >
+      +
+    </button>
+    &nbsp;
+    <button mat-raised-button color="warn" (click)="decrement()">-</button>
+  </mat-card>
+</div>
