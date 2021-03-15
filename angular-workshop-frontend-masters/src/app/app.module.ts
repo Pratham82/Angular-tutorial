@@ -9,6 +9,8 @@ import { MaterialModule } from './material.module';
 import { HomeComponent } from './home/home.component';
 import { CoursesComponent } from './courses/courses.component';
 import { FormsModule } from '@angular/forms';
+import { CoursesService } from './shared/services/courses.service';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   imports: [
@@ -22,9 +24,12 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HomeComponent,
-    CoursesComponent
+    CoursesComponent,
+    CounterComponent
   ],
-  providers: [],
+  providers: [
+    CoursesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
