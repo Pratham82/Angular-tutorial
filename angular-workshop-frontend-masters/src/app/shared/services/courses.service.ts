@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
+const BASE_URL = 'http://localhost:3000/'
 @Injectable({
   providedIn: 'root'
 })
 export class CoursesService {
 
-  constructor() { }
-
+  constructor(private http: HttpClient) { }
+  private model = 'courses'
   private courses = [
     {
       id: 1,
@@ -25,11 +27,13 @@ export class CoursesService {
   ];
 
   all() {
-    return this.courses
+    // return this.courses
+    return this.http.get(this.getUrl())
   }
 
   create(course) {
-    console.log('CREATE COURSE', course)
+    // console.log('CREATE COURSE', course)
+    return this.http.post(this.getUrl(), course)
   }
 
   find(courseId) {
@@ -42,8 +46,11 @@ export class CoursesService {
   }
 
   delete(courseId) {
-
     console.log('DELETE COURSE', courseId)
+  }
+
+  getUrl() {
+    return `${BASE_URL}${this.model}`
   }
 
 }
