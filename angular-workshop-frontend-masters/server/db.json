@@ -2,7 +2,7 @@
   "courses": [
     {
       "id": 1,
-      "title": "Angular 9 Fundamentals",
+      "title": "Angular 9 Fundamentals 2.0",
       "description": "Learn the fundamentals of Angular 9",
       "percentComplete": 26,
       "favorite": true
@@ -17,8 +17,15 @@
     {
       "id": 3,
       "title": "Functional JavaScript",
-      "description": "Functional programming with JS",
-      "percentComplete": 19,
+      "description": "Learn the fundamentals JS",
+      "percentComplete": 25,
+      "favorite": true
+    },
+    {
+      "id": 4,
+      "title": "efwe",
+      "description": "wewerewr",
+      "percentComplete": 9,
       "favorite": true
     }
   ]
