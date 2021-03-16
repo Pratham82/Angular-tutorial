@@ -11,6 +11,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { FormsModule } from '@angular/forms';
 import { CoursesService } from './shared/services/courses.service';
 import { CounterComponent } from './counter/counter.component';
+import { LessonsService } from './shared/services/lessons.service';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { CounterComponent } from './counter/counter.component';
     CounterComponent
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    LessonsService
   ],
   bootstrap: [AppComponent]
 })
