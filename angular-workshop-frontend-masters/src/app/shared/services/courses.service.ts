@@ -9,22 +9,6 @@ export class CoursesService {
 
   constructor(private http: HttpClient) { }
   private model = 'courses'
-  private courses = [
-    {
-      id: 1,
-      title: 'Angular 9 Fundamentals',
-      description: 'Learn the fundamentals of Angular 9',
-      percentComplete: 26,
-      favorite: true
-    },
-    {
-      id: 2,
-      title: 'JavaScript The Really REALLY HARD PARTS',
-      description: 'Worship Will Sentence',
-      percentComplete: 50,
-      favorite: true
-    }
-  ];
 
   all() {
     // return this.courses
@@ -37,20 +21,25 @@ export class CoursesService {
   }
 
   find(courseId) {
-    console.log('FIND COURSE', courseId)
+    return this.http.get(this.getUrlById(courseId))
 
   }
 
   update(course) {
-    console.log('UPDATE COURSE', course)
+    return this.http.put(this.getUrlById(course.id), course)
   }
 
   delete(courseId) {
-    console.log('DELETE COURSE', courseId)
+    console.log(courseId);
+    return this.http.delete(`${this.getUrlById(courseId)}`)
   }
 
   getUrl() {
     return `${BASE_URL}${this.model}`
+  }
+
+  getUrlById(id) {
+    return `${this.getUrl()}/${id}`
   }
 
 }
