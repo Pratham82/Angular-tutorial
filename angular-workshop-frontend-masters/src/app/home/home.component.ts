@@ -7,7 +7,7 @@ import { LessonsService } from '../shared/services/lessons.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  title = 'Hello Workshop';
+  // title = 'Hello Workshop';
   currentLesson = null;
   courseLessons = null
 
