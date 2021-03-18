@@ -12,6 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { CoursesService } from './shared/services/courses.service';
 import { CounterComponent } from './counter/counter.component';
 import { LessonsService } from './shared/services/lessons.service';
+import { CourseListComponent } from './courses/course-list/course-list.component';
+import { CourseDetailsComponent } from './courses/course-details/course-details.component';
+import { LessonListComponent } from './home/lessons/lesson-list/lesson-list.component';
+import { LessonDetailsComponent } from './home/lessons/lesson-details/lesson-details.component';
 
 @NgModule({
   imports: [
@@ -26,7 +30,11 @@ import { LessonsService } from './shared/services/lessons.service';
     AppComponent,
     HomeComponent,
     CoursesComponent,
-    CounterComponent
+    CounterComponent,
+    CourseListComponent,
+    CourseDetailsComponent,
+    LessonListComponent,
+    LessonDetailsComponent
   ],
   providers: [
     CoursesService,
